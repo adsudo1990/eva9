@@ -8,13 +8,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@500;600;700&display=swap">
 <style>
   :root {
-    --red: #e3241b;
+    --red: #ee1c25;
     --red-deep: #9c1010;
     --red-light: #ff5a3c;
     --blue: #1b6fd1;
     --gold: #ffcf2e;
     --white: #ffffff;
-    --shadow: #7a0a0a;
+    --shadow: #8a0a12;
     box-sizing: border-box;
   }
   *, *::before, *::after { box-sizing: inherit; margin: 0; }
@@ -31,12 +31,12 @@
   /* ---------- Fondo animado ---------- */
   .bg {
     position: fixed; inset: 0; z-index: 0; overflow: hidden;
-    background: radial-gradient(120% 90% at 50% 45%, #ff5a3c 0%, #e3241b 50%, #a51212 100%);
+    background: radial-gradient(120% 90% at 50% 42%, #ff4a3d 0%, #ee1c25 42%, #c3101a 75%, #8f0a14 100%);
   }
   .blob { position: absolute; width: 90vmax; height: 90vmax; border-radius: 50%; will-change: transform; }
-  .b1 { left: -30vmax; top: -30vmax; background: radial-gradient(circle, rgba(255,196,60,.6), transparent 65%); animation: drift1 11s ease-in-out infinite alternate; }
-  .b2 { right: -35vmax; bottom: -35vmax; background: radial-gradient(circle, rgba(255,110,150,.5), transparent 65%); animation: drift2 13s ease-in-out infinite alternate; }
-  .b3 { left: -10vmax; bottom: -40vmax; background: radial-gradient(circle, rgba(60,150,255,.38), transparent 65%); animation: drift3 15s ease-in-out infinite alternate; }
+  .b1 { left: -30vmax; top: -30vmax; background: radial-gradient(circle, rgba(255,255,255,.14), transparent 65%); animation: drift1 11s ease-in-out infinite alternate; }
+  .b2 { right: -35vmax; bottom: -35vmax; background: radial-gradient(circle, rgba(255,40,50,.55), transparent 65%); animation: drift2 13s ease-in-out infinite alternate; }
+  .b3 { left: -10vmax; bottom: -40vmax; background: radial-gradient(circle, rgba(0,93,163,.45), transparent 65%); animation: drift3 15s ease-in-out infinite alternate; }
   @keyframes drift1 { to { transform: translate3d(45vmax, 35vmax, 0) scale(1.15); } }
   @keyframes drift2 { to { transform: translate3d(-45vmax, -30vmax, 0) scale(1.1); } }
   @keyframes drift3 { to { transform: translate3d(50vmax, -25vmax, 0) scale(1.2); } }
@@ -46,13 +46,13 @@
     -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.25) 35%, transparent 62%);
             mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.25) 35%, transparent 62%);
   }
-  .rays  { background: repeating-conic-gradient(from 0deg, rgba(255,214,64,.30) 0deg 7deg, transparent 7deg 20deg); animation: spin 70s linear infinite; }
-  .rays2 { background: repeating-conic-gradient(from 10deg, rgba(255,255,255,.18) 0deg 4deg, transparent 4deg 30deg); animation: spin 110s linear infinite reverse; }
+  .rays  { background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.13) 0deg 7deg, transparent 7deg 20deg); animation: spin 70s linear infinite; }
+  .rays2 { background: repeating-conic-gradient(from 10deg, rgba(0,93,163,.16) 0deg 4deg, transparent 4deg 30deg); animation: spin 110s linear infinite reverse; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .sweep {
     position: absolute; inset: 0;
     inset: -10% auto -10% -70%; width: 60%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.26) 40%, rgba(255,255,255,.26) 60%, transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.16) 40%, rgba(255,255,255,.16) 60%, transparent);
     transform: skewX(-22deg); will-change: transform;
     animation: sweep 6.5s linear infinite;
   }
@@ -89,23 +89,28 @@
   }
   .month {
     font-family: 'Luckiest Guy', 'Impact', sans-serif;
-    font-size: clamp(28px, 9vw, 54px); line-height: 1.05; letter-spacing: .04em; color: var(--gold);
-    text-shadow: 0 4px 0 #8a5a00, 0 9px 16px rgba(0,0,0,.35);
+    font-size: clamp(28px, 9vw, 54px); line-height: 1.05; letter-spacing: .04em; color: #ffffff;
+    text-shadow: 0 4px 0 #003f73, 0 9px 16px rgba(0,0,0,.35);
   }
   .mid { position: relative; flex: 1; width: 100%; max-width: 520px; min-height: 30vh; }
-  .bottom { display: grid; gap: 1vh; }
-  .chips { display: flex; flex-wrap: nowrap; gap: 8px; justify-content: center; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 8px 13px; border-radius: 999px;
-    background: rgba(255,255,255,.97); color: var(--red-deep);
-    font-weight: 700; font-size: clamp(13px, 3.9vw, 20px); text-decoration: none; white-space: nowrap;
-    box-shadow: 0 5px 0 rgba(122,10,10,.6), 0 12px 20px rgba(0,0,0,.25);
+  .bottom { display: grid; gap: 1.8vh; }
+  .info {
+    display: grid; justify-items: center; gap: 2px; margin: 0 auto;
+    padding: 7px 18px 9px; border-radius: 20px; text-decoration: none; text-align: center;
+    background: #fff; border: 4px solid #005da3; color: #005da3;
+    box-shadow: 0 6px 0 #003f73, 0 0 0 5px rgba(255,255,255,.55), 0 16px 26px rgba(0,0,0,.35);
+    pointer-events: auto; cursor: pointer; will-change: transform;
   }
-  .chip svg { width: 1.1em; height: 1.1em; flex: none; }
-  a.chip { pointer-events: auto; cursor: pointer; }
-  a.chip:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(122,10,10,.6); }
-  a.chip:focus-visible { outline: 4px solid var(--gold); outline-offset: 3px; }
+  .info .lead { font-weight: 700; font-size: clamp(13px, 3.8vw, 19px); line-height: 1.1; }
+  .info .big {
+    display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+    font-family: 'Luckiest Guy', 'Impact', sans-serif; letter-spacing: .03em; line-height: 1.05;
+    font-size: clamp(23px, 7.4vw, 38px); color: #e3121b;
+  }
+  .info .big svg { width: .85em; height: .85em; flex: none; }
+  .info .row { display: flex; align-items: center; gap: 8px; }
+  .info:active { transform: translateY(4px); box-shadow: 0 2px 0 #003f73, 0 0 0 5px rgba(255,255,255,.55); }
+  .info:focus-visible { outline: 4px solid var(--gold); outline-offset: 4px; }
   .bye {
     font-family: 'Luckiest Guy', 'Impact', sans-serif;
     font-size: clamp(30px, 9.6vw, 52px); line-height: 1.05; letter-spacing: .05em; color: var(--white);
@@ -127,19 +132,19 @@
   }
   .intro .who {
     font-family: 'Luckiest Guy', 'Impact', sans-serif;
-    font-size: clamp(96px, 34vw, 190px); line-height: .9; letter-spacing: .04em; color: var(--gold);
-    text-shadow: 0 6px 0 #8a5a00, 0 13px 0 rgba(122,10,10,.5), 0 22px 28px rgba(0,0,0,.4);
+    font-size: clamp(96px, 34vw, 190px); line-height: .9; letter-spacing: .04em; color: #ffffff;
+    text-shadow: 0 6px 0 #003f73, 0 13px 0 rgba(122,10,10,.5), 0 22px 28px rgba(0,0,0,.4);
   }
   .intro .sub { font-weight: 700; font-size: clamp(18px, 5.4vw, 28px); text-shadow: 0 3px 0 var(--shadow); }
   .open {
     pointer-events: auto; cursor: pointer; margin-top: 1vh;
     font-family: 'Luckiest Guy', 'Impact', sans-serif; font-size: clamp(26px, 8vw, 38px); letter-spacing: .06em;
     padding: 16px 44px; border: 0; border-radius: 999px;
-    background: var(--gold); color: #6d1200;
-    box-shadow: 0 7px 0 #b07a00, 0 16px 26px rgba(0,0,0,.3);
+    background: #ffffff; color: #005da3;
+    box-shadow: 0 7px 0 #003f73, 0 16px 26px rgba(0,0,0,.3);
     animation: pulse 1.3s ease-in-out infinite;
   }
-  .open:active { transform: translateY(5px); box-shadow: 0 2px 0 #b07a00; animation: none; }
+  .open:active { transform: translateY(5px); box-shadow: 0 2px 0 #003f73; animation: none; }
   .open:focus-visible { outline: 4px solid #fff; outline-offset: 4px; }
   @keyframes pulse { 50% { transform: scale(1.08); } }
 
@@ -185,16 +190,11 @@
   <section class="mid" id="mid"><div class="hint" id="hint">Tocá los globos, el escudo y la pantalla</div></section>
 
   <section class="bottom">
-    <div class="chips">
-      <span class="chip" id="chipTime">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        18 a 20:30 hs
-      </span>
-      <a class="chip" id="chipPlace" href="https://www.google.com/maps/search/?api=1&query=Tronador%2041%2C%20Buenos%20Aires%2C%20Argentina" target="_blank" rel="noopener" aria-label="Abrir Tronador 41 en Google Maps">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        Tronador 41
-      </a>
-    </div>
+    <a class="info" id="info" href="https://www.google.com/maps/search/?api=1&query=Tronador%2041%2C%20Buenos%20Aires%2C%20Argentina" target="_blank" rel="noopener" aria-label="Nos vemos desde las 18 a 20:30 hs en Tronador 41. Abrir en Google Maps">
+      <span class="lead">Nos vemos desde las</span>
+      <span class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>18 a 20:30 hs</span>
+      <span class="row"><span class="lead">en</span><span class="big"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Tronador 41</span></span>
+    </a>
     <div class="bye" id="bye">¡Te espero!</div>
   </section>
 </main>
@@ -438,8 +438,8 @@
   }
   function buildNine() {
     const planeGeo = new THREE.PlaneGeometry(1.25, 1.25);
-    const blue = nineTex('#1b6fd1', '#1b6fd1');
-    const white = nineTex('#ffffff', '#1b6fd1');
+    const blue = nineTex('#005da3', '#005da3');
+    const white = nineTex('#ffffff', '#005da3');
     const L = 18;
     for (let i = 0; i < L; i++) {
       const k = i / (L - 1);
@@ -458,7 +458,7 @@
   const CONF = 360;
   const conf = new THREE.InstancedMesh(new THREE.PlaneGeometry(0.12, 0.2), new THREE.MeshBasicMaterial({ side: THREE.DoubleSide }), CONF);
   conf.frustumCulled = false; scene.add(conf);
-  const palette = [0xffffff, 0xffcf2e, 0x1b6fd1, 0xff9ab0, 0x7fd0ff, 0xffffff, 0xff3b30].map(c => new THREE.Color(c));
+  const palette = [0xffffff, 0x005da3, 0xffffff, 0x1676c8, 0xc50f1a, 0xffffff, 0x005da3].map(c => new THREE.Color(c));
   const P = [], dummy = new THREE.Object3D(); let cursor = 0;
   for (let i = 0; i < CONF; i++) {
     P.push({ life: 0, pos: new THREE.Vector3(), vel: new THREE.Vector3(), rot: new THREE.Vector3(), spin: new THREE.Vector3() });
@@ -620,7 +620,7 @@
   }
 
   const sky = document.getElementById('sky');
-  const bCols = ['#ff3b30', '#ffffff', '#1b6fd1', '#ffcf2e', '#ff8ab5', '#3ad0ff'];
+  const bCols = ['#ffffff', '#005da3', '#ffffff', '#1676c8', '#d9131c', '#005da3', '#ffffff'];
   function balloonSVG(c) {
     return `<svg viewBox="0 0 60 100" aria-hidden="true"><path d="M30 2C13 2 3 16 3 33c0 18 14 34 27 38 13-4 27-20 27-38C57 16 47 2 30 2z" fill="${c}"/><ellipse cx="19" cy="22" rx="5.5" ry="10" fill="rgba(255,255,255,.45)" transform="rotate(20 19 22)"/><path d="M30 70l-4.500 7h9z" fill="${c}"/><path d="M30 77c-6 6 6 10 0 21" stroke="rgba(255,255,255,.85)" fill="none" stroke-width="1.6"/></svg>`;
   }
@@ -673,7 +673,7 @@
   const dateC = splitChars(document.getElementById('date'));
   const monthW = splitWords(document.getElementById('month'));
   const byeC = splitChars(document.getElementById('bye'));
-  const chips = ['chipTime', 'chipPlace'].map(id => document.getElementById(id));
+  const chips = [document.getElementById('info')];
   const openBtn = document.getElementById('openBtn');
 
   gsap.set([...l1W, ...dateC, ...monthW, ...byeC, ...chips], { opacity: 0 });
@@ -723,12 +723,12 @@
       gsap.to('#hint', { opacity: 0, duration: .8, delay: 6 });
       if (reduce) return;
       gsap.to(byeC, { y: -10, duration: .6, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: { each: .07, yoyo: true, repeat: -1 } });
-      gsap.to(chips, { y: -5, duration: 1.1, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: .25 });
+      gsap.to(chips, { scale: 1.04, duration: .9, ease: 'sine.inOut', yoyo: true, repeat: -1 });
       gsap.to(dateC, { y: -6, duration: .8, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: { each: .08, yoyo: true, repeat: -1 } });
     });
   }
   openBtn.addEventListener('click', open);
-  document.getElementById('chipPlace').addEventListener('pointerdown', () => sfx.ding());
+  document.getElementById('info').addEventListener('pointerdown', () => sfx.ding());
 })();
 </script>
 </body>
